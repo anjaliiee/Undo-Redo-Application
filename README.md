@@ -48,7 +48,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Acknowledgements
 Inspired by various text editor projects and custom cursor designs.
 
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
