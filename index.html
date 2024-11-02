@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undo Redo Example</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Undo Redo</h2>
+      <textarea
+        id="text-area"
+        rows="10"
+        cols="50"
+        oninput="trackChange()"
+      ></textarea>
+      <br />
+      <button onclick="undo()">Undo</button>
+      <button onclick="redo()">Redo</button>
+
+      <!-- Hover to Expand Section -->
+    </div>
+    <h1 style="margin-left: 12px">
+      How<br />
+      Does It Work?
+    </h1>
+    <div class="info-section">
+      <div class="drag-container">
+        <div class="drag-content">
+          <h3>Understanding Undo and Redo Using Stacks</h3>
+          <p>
+            This project uses two stacks to manage changes in the text area: an
+            <strong>Undo Stack</strong> and a <strong>Redo Stack</strong>. Each
+            time you make a change, it’s saved as an "action" in these stacks to
+            enable undo and redo functionality. <br /><br />
+
+            <strong>Undo Stack:</strong> Think of the undo stack as a "history"
+            of changes. Every time you make a new change, it’s pushed (added)
+            onto the undo stack. When you click "Undo," the most recent action
+            is popped (removed) from this stack, and the text area reverts to
+            its previous state. <br /><br />
+
+            <strong>Redo Stack:</strong> When you undo an action, that action is
+            pushed onto the redo stack. If you decide to redo it, the last
+            action from the redo stack is popped and re-applied to the text
+            area. This allows you to "redo" the change you previously undid.
+            <br /><br />
+
+            <strong><h3>How It Works:</h3></strong>
+            - Each change is treated as an "action" and recorded in the stacks.
+            - <strong>Undo</strong> uses the undo stack to go back in your
+            changes by popping the last action. - <strong>Redo</strong> uses the
+            redo stack to re-apply actions that were undone. <br /><br />
+            These stacks work in a Last-In-First-Out (LIFO) manner, meaning the
+            most recent action is always the first to be undone or redone.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
